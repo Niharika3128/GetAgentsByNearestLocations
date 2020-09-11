@@ -1,0 +1,62 @@
+{% extends 'common.html' %}
+{% block common %}
+    {% load static %}
+      <head>
+        <title>Nearest Agents</title>
+          <link rel="stylesheet" href="{% static 'css/design.css' %}">
+      </head>
+      <body>
+        <table id="table">
+            <tr>
+                <th id="img-col" class="img"><a href="{% url 'main' %}" ><img src="{% static 'images/home.png' %}" width="50" height="40"> </a></th>
+                <th id="title">Nearest Agents By {{ place_data.city_name }} </th>
+            </tr>
+        </table>
+        <br>
+        <table class="table table-hover" table-bordered width="1000">
+            <thead>
+                <tr class="table-success">
+                  <th scope="col" class="header">Id</th>
+                  <th scope="col" class="header">Name</th>
+                  <th scope="col" class="header">Address</th>
+                  <th scope="col" class="header">City</th>
+                  <th scope="col" class="header">Zipcode</th>
+                  <th scope="col" class="header">State</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in agents_data %}
+                <tr class="table-danger">
+                    <th width="150" >{{ x.id }}</th>
+                    <th width="200" >{{ x.name }}</th>
+                    <th width="150" >{{ x.address }}</th>
+                    <th width="150" >{{ x.city }}</th>
+                    <th width="100" >{{ x.zipcode }}</th>
+                    <th width="100" >{{ x.state }}</th>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-end">
+              {% if agents_data.has_previous %}
+                <li class="page-item">
+                  <a class="page-link" href="{% url 'get_page' pno=agents_data.previous_page_number id=place_data.id %}" tabindex="0" aria-disabled="true">
+                      Previous
+                  </a>
+                </li>
+              {% endif %}
+                  {% for x in agents_data.paginator.page_range %}
+                    <li class="page-item"><a class="page-link" href="{% url 'get_page' pno=x id=place_data.id %}">{{ x }}</a></li>
+                  {% endfor %}
+              {% if agents_data.has_next %}
+                <li class="page-item">
+                  <a class="page-link" href="{% url 'get_page' pno=agents_data.next_page_number id=place_data.id %}">
+                      Next
+                  </a>
+                </li>
+              {% endif %}
+              </ul>
+            </nav>
+        </body>
+{% endblock %}

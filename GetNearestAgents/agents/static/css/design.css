@@ -1,0 +1,60 @@
+
+#title{
+    font-family: "Agency FB";
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    text-shadow: black 2px 5px 2px;
+    background-color: darkblue;
+
+}
+#table{
+    width: 100%;
+    padding-top: 30%;
+}
+#img-col{
+    background-color: darkblue;
+}
+
+.img{
+    width:10%;
+}
+
+.header{
+    font-size: 20px;
+    color: darkred;
+}
+
+#home-body{
+    background-size: cover;
+}
+
+#home-table{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 50px solid transparent;
+    border-radius: 20px;
+}
+
+.center{
+    text-align: center;
+}
+
+#some-text{
+    text-align: center;
+    width: 100%;
+    font-family: "Bauhaus 93";
+    font-size: 50px;
+    background-color: darkblue;
+    color: white;
+}
+
+#footer_dec{
+    background-color: darkblue;
+    color: white;
+    text-align: right;
+    padding-right: 50px ;
+    font-family: "Calibri";
+}
+

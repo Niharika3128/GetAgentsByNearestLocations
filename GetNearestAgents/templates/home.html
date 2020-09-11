@@ -1,0 +1,40 @@
+{% extends 'common.html' %}
+
+{% block common %}
+    {% load static %}
+        <head>
+            <title>Home</title>
+            <link rel="icon" href="{% static 'icons/home-icon.jpg' %}" type="image/x-icon">
+            <link rel="stylesheet" href="{% static 'css/design.css' %}">
+        </head>
+        <body background="{% static 'images/agent_background.jpg' %}" id="home-body">
+            <div id="some-text">
+                Click on the places to view 100 Nearest Agents
+            </div>
+
+            <marquee>
+                <font color="white">Click on the places to view 100 Nearest Agents</font>
+            </marquee>
+            <table id="home-table">
+                <tr><th><a href="{% url 'locations' %}?id={{ 1 }}" class="list-group-item list-group-item-action list-group-item-primary center">New york city, New york</a> </th></tr>
+                <tr><th><a href="{% url 'locations' %}?id={{ 2 }}" class="list-group-item list-group-item-action list-group-item-secondary center">Boston, Massachusetts</a> </th></tr>
+                <tr><th><a href="{% url 'locations' %}?id={{ 3 }}" class="list-group-item list-group-item-action list-group-item-success center">Los Angeles, California</a> </th></tr>
+                <tr><th><a href="{% url 'locations' %}?id={{ 4 }}" class="list-group-item list-group-item-action list-group-item-danger center">Chicago, Illinois</a> </th></tr>
+                <tr><th><a href="{% url 'locations' %}?id={{ 5 }}" class="list-group-item list-group-item-action list-group-item-warning center">Houston, Texas</a> </th></tr>
+                <tr><th><a href="{% url 'locations' %}?id={{ 6 }}" class="list-group-item list-group-item-action list-group-item-info center">Phoenix, Arizona</a> </th></tr>
+                <tr><th><a href="{% url 'locations' %}?id={{ 7 }}" class="list-group-item list-group-item-action list-group-item-light center">San Diego, California</a> </th></tr>
+                <tr><th><a href="{% url 'locations' %}?id={{ 8 }}" class="list-group-item list-group-item-action list-group-item-dark center">Dallas, Texas</a> </th></tr>
+                <tr><th><a href="{% url 'locations' %}?id={{ 9 }}" class="list-group-item list-group-item-action list-group-item-success center">San Jose, California</a> </th></tr>
+                <tr><th><a href="{% url 'locations' %}?id={{ 10 }}" class="list-group-item list-group-item-action list-group-item-danger center">Austin, Texas</a> </th></tr>
+                <tr><th><a href="{% url 'locations' %}?id={{ 11 }}" class="list-group-item list-group-item-action list-group-item-warning center">Columbus, Ohio</a> </th></tr>
+            </table>
+
+        </body>
+{% endblock %}
+
+
+
+
+
+
+
